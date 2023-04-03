@@ -5,20 +5,20 @@
 class Ecgpt < Formula
   desc ""
   homepage ""
-  version "0.1.0"
+  version "1.0.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/ryuichi-maeda/ecgpt/releases/download/v0.1.0/ecgpt_Darwin_x86_64.tar.gz"
-      sha256 "87ada49ccbe69d49e49e697c461277a7d0aea2496026ca42fb9c70855b8663c3"
+    if Hardware::CPU.arm?
+      url "https://github.com/ryuichi-maeda/ecgpt/releases/download/v1.0.0/ecgpt_Darwin_arm64.tar.gz"
+      sha256 "a4f2082fd1a776d250e22cbd9eb073c9d0e9d52041b643fdad06d2060b1f4d3a"
 
       def install
         bin.install "ecgpt"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/ryuichi-maeda/ecgpt/releases/download/v0.1.0/ecgpt_Darwin_arm64.tar.gz"
-      sha256 "08dfcba4fd5141da42b94c2e6d872ab10cade39485f5f4d5f7afb860dd24694c"
+    if Hardware::CPU.intel?
+      url "https://github.com/ryuichi-maeda/ecgpt/releases/download/v1.0.0/ecgpt_Darwin_x86_64.tar.gz"
+      sha256 "2daf567a11f038f514314414d3b01c124628eafd372c52a69b194b34dc15f16d"
 
       def install
         bin.install "ecgpt"
@@ -28,16 +28,16 @@ class Ecgpt < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ryuichi-maeda/ecgpt/releases/download/v0.1.0/ecgpt_Linux_arm64.tar.gz"
-      sha256 "b8f46a99b8761b27c7c6adb3cd49c4c5702cc6efcfee4d703fdd0f394da13b4b"
+      url "https://github.com/ryuichi-maeda/ecgpt/releases/download/v1.0.0/ecgpt_Linux_arm64.tar.gz"
+      sha256 "5a71d45f320bd48c893145cfeca2e20e1630353d5cd60441e504eefe774ca974"
 
       def install
         bin.install "ecgpt"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ryuichi-maeda/ecgpt/releases/download/v0.1.0/ecgpt_Linux_x86_64.tar.gz"
-      sha256 "cadea4f3c9af2eb7be6bd2cacb15e2d0e224335c52e8c28a64794adff932a04c"
+      url "https://github.com/ryuichi-maeda/ecgpt/releases/download/v1.0.0/ecgpt_Linux_x86_64.tar.gz"
+      sha256 "18870300f9cd856a5f3787f298118b01e91ca710b6b48786321b3ce381be5cd3"
 
       def install
         bin.install "ecgpt"
